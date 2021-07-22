@@ -6,10 +6,10 @@ const imageService = require("../services/image_sevice")
 router.post('/images/add',async(req,res)=>{
     try{
     await imageService.addNewImage(req.body)
-    res.status(200).send("Image added succesfully");
+    res.status(200);
     }catch(err){
         console.log(err);
-        res.status(400).send("Cannot add image");
+        res.status(400);
     }
 });
 router.get("/images",async(req,res)=>{
@@ -17,16 +17,16 @@ router.get("/images",async(req,res)=>{
     res.status(200).send(await imageService.getAllImages());
     }catch(err){
         console.log(err);
-        res.status(400).send("Cannot get all images");
+        res.status(400);
     }
 });
 router.post("/images/udpate",async(req,res)=>{
     try{
         await imageService.updateImageData(req.body);
-        res.status(200).send("Updated image succesfully");
+        res.status(200);
     }catch(err){
         console.log(err);
-        res.status(400).send("Cannot update image data");
+        res.status(400);
     }
 })
 
