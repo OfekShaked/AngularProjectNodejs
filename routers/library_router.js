@@ -5,9 +5,9 @@ const router = express.Router();
 router.post("/library/add",async(req,res)=>{
     try{
         await libraryService.addLibaryDetails(req.body);
-        res.status(200);
+        res.send({isSuccess:"Success",status:200});
     }catch(err){
-        res.status(400);
+        res.send({isSuccess:"Error",status:400});
     }
 })
 module.exports=router;

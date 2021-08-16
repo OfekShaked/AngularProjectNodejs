@@ -1,0 +1,1 @@
+{"imageId":"4","title":null,"categories":null,"isFavourite":null,"isPrivate":null,"location":null,"imagePath":"./assets/images/4.png","imageDataPath":"./assets/images-data/4.txt"}

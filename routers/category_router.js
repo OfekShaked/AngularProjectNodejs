@@ -5,10 +5,10 @@ const router = express.Router();
 router.get("/category/add/:category_name",async (req,res)=>{
     try{
     await categoryService.addCategory(req.params);
-    res.status(200);
-    }catch(err){
+    res.send({isSuccess:"Success",status:200});
+}catch(err){
         console.log(err);
-        res.status(400);
+        res.send({isSuccess:"Error",status:400});
     }
 });
 
@@ -17,7 +17,7 @@ router.get("/categories",async (req,res)=>{
     res.status(200).send(await categoryService.getAllCategories());
     }catch(err){
         console.log(err);
-        res.status(400);
+        res.send({isSuccess:"Error",status:400});
     }
 })
 
