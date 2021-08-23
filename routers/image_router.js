@@ -14,7 +14,7 @@ router.post('/images/add',async(req,res)=>{
 });
 router.get("/images",async(req,res)=>{
     try{
-    res.status(200).send(await imageService.getAllImages());
+    res.send({status:200,images:await imageService.getAllImages()});
     }catch(err){
         console.log(err);
         res.send({isSuccess:"Error",status:400});
@@ -22,7 +22,7 @@ router.get("/images",async(req,res)=>{
 });
 router.post("/images/udpate",async(req,res)=>{
     try{
-        await imageService.updateImageData(req.body);
+        await imageService.editImageData(req.body);
         res.send({isSuccess:"Success",status:200});
     }catch(err){
         console.log(err);

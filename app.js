@@ -5,7 +5,7 @@ const config = require("./configs/config");
 const imageRouter= require('./routers/image_router');
 const categoryRouter = require('./routers/category_router')
 const libraryRouter = require('./routers/library_router')
-
+const errorRouter = require('./routers/error_router');
 
 app.use(cors());
 
@@ -17,6 +17,7 @@ app.use(categoryRouter);
 
 app.use(libraryRouter);
 
+app.use(errorRouter);
 app.listen(config.PORT, async () => {
     console.log(`Server up in port ${config.PORT}`);
   });

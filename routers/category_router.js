@@ -14,7 +14,7 @@ router.get("/category/add/:category_name",async (req,res)=>{
 
 router.get("/categories",async (req,res)=>{
     try{
-    res.status(200).send(await categoryService.getAllCategories());
+    res.send({status:200,categories:await categoryService.getAllCategories()});
     }catch(err){
         console.log(err);
         res.send({isSuccess:"Error",status:400});
